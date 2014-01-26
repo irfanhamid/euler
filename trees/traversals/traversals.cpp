@@ -54,12 +54,14 @@ void Postorder(const TNode* tree)
   const TNode* current = tree;
   stack<const TNode*> frame;
 
-  while (true)
+  while (current)
   {
     if (current) {
       if ((!current->right && !current->left) || prev == current->left || prev == current->right) {
 	cout << current->data << "\t";
 	prev = current;
+	if (frame.empty())
+	  return;
 	current = frame.top();
 	frame.pop();
       } else {
@@ -67,7 +69,6 @@ void Postorder(const TNode* tree)
 	if (current->right)
 	  frame.push(current->right);
 
-	prev = current;
 	if (current->left) {
 	  current = current->left;
 	} else if (frame.empty()) {
