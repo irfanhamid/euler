@@ -1,14 +1,21 @@
-#include <iostream>
+/*
+  Logically, in a BST, the successsor of a node is the node immediately after it in an inorder traversal.
+  If the node has a left child, then successor is the TreeMin(leftchild).
+  Otherwise, keep going up the tree until you climb up a left link and then the parent is the successor.
+  Symmetric reasoning to arrive at the algorithm for predecessor.
+ */
 
+#include <iostream>
 #include "tree.hpp"
 
 using namespace std;
 
 typedef euler::TreeNode_T<int> Tree_T;
 
+// Assume that the successor of a node where it is the only node of a tree is not defined
 const Tree_T* Successor(const Tree_T* tree)
 {
-  if (!tree)
+  if (!tree || (!tree->left && !tree->right && !tree->parent))
     return NULL;
 
   if (tree->right)
@@ -26,6 +33,7 @@ const Tree_T* Successor(const Tree_T* tree)
   return current;
 }
 
+// Assume that the predecessor of a node where it is the only node of a tree is not defined
 const Tree_T* Predecessor(const Tree_T* tree)
 {
   if (!tree || (!tree->left && !tree->right && !tree->parent))

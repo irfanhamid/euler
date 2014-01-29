@@ -4,9 +4,9 @@
 
 using namespace std;
 
-typedef euler::TreeNode<int> TNode;
+typedef euler::TreeNode_T<int> Tree_T;
 
-void Inorder(const TNode* tree)
+void Inorder(const Tree_T* tree)
 {
   /* 
      Recursively defined as:
@@ -16,8 +16,8 @@ void Inorder(const TNode* tree)
      Inorder(tree->right);
   */
 
-  const TNode* current = tree;
-  stack<const TNode*> frame;
+  const Tree_T* current = tree;
+  stack<const Tree_T*> frame;
 
   while (true)
   {
@@ -40,7 +40,7 @@ void Inorder(const TNode* tree)
   }
 }
 
-void Postorder(const TNode* tree)
+void Postorder(const Tree_T* tree)
 {
   /*
     Recursively defined as:
@@ -50,15 +50,19 @@ void Postorder(const TNode* tree)
     visit(tree);
   */
 
-  const TNode* prev = NULL;
-  const TNode* current = tree;
-  stack<const TNode*> frame;
+  const Tree_T* prev = NULL;
+  const Tree_T* current = tree;
+  stack<const Tree_T*> frame;
 
   while (current)
   {
     if (current) {
       if ((!current->right && !current->left) || prev == current->left || prev == current->right) {
+
+	// <visit>
 	cout << current->data << "\t";
+	// </visit>
+
 	prev = current;
 	if (frame.empty())
 	  return;
@@ -82,7 +86,7 @@ void Postorder(const TNode* tree)
   }
 } 
 
-void Preorder(const TNode* tree)
+void Preorder(const Tree_T* tree)
 {
   /*
     Recursively defined as:
@@ -92,8 +96,8 @@ void Preorder(const TNode* tree)
     Preorder(tree->right);
   */
 
-  const TNode* current = tree;
-  stack<const TNode*> frame;
+  const Tree_T* current = tree;
+  stack<const Tree_T*> frame;
   
   while (true)
   {
@@ -117,14 +121,14 @@ void Preorder(const TNode* tree)
 
 int main()
 {
-  TNode root(8);
-  TNode rootl(5);
-  TNode rootr(10);
+  Tree_T root(8);
+  Tree_T rootl(5);
+  Tree_T rootr(10);
   root.left = &rootl;
   root.right = &rootr;
   
-  TNode rootll(2);
-  TNode rootlr(7);
+  Tree_T rootll(2);
+  Tree_T rootlr(7);
   rootl.left = &rootll;
   rootl.right = &rootlr;
   
