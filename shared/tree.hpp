@@ -8,15 +8,15 @@ namespace euler
   {
     typedef TreeNode_T<Payload_T> Self_T;
 
+    Payload_T data;
     Self_T* left;
     Self_T* right;
     Self_T* parent;
-    Payload_T data;
 
     TreeNode_T(const Payload_T& d) : data(d),
-				     left(NULL),
-				     right(NULL),
-				     parent(NULL)
+                                     left(NULL),
+                                     right(NULL),
+                                     parent(NULL)
     {
     }
 
@@ -38,7 +38,7 @@ namespace euler
   {
     if (!tree)
       return NULL;
-    
+
     TreeNode_T<Payload_T>* current = tree;
     while (current->left)
       current = current->left;
