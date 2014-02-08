@@ -8,5 +8,8 @@ euler
           |---> traversals: iterative implementations of the inorder, preorder and postorder traversals
           |---> predsuc: predecessor and successor functions for BSTs  
           |---> reconstruct: rebuild a tree from its inorder and preorder traversals
+  |---> strings: problems based on strings
+          |---> reverse: reverse a string in-place, i.e., without using auxiliary storage space
+          |---> reversewords: reverse the words in a string in-place
   |---> graphs: graph search algorithms
   |---> esoteric: just what the name says
