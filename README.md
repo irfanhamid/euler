@@ -7,5 +7,6 @@ euler
   |---> trees: problems based on trees, traversal, searches, etc.
           |---> traversals: iterative implementations of the inorder, preorder and postorder traversals
           |---> predsuc: predecessor and successor functions for BSTs  
+          |---> reconstruct: rebuild a tree from its inorder and preorder traversals
   |---> graphs: graph search algorithms
   |---> esoteric: just what the name says

@@ -34,7 +34,6 @@ int Search(int* v, int s, int e, int k)
 }
 
 int preorderStart = 0;
-int preorderEnd = 7;
 
 Tree_T* Reconstruct(int* inorder, int inorderStart, int inorderEnd, int* preorder)
 {
@@ -47,23 +46,15 @@ Tree_T* Reconstruct(int* inorder, int inorderStart, int inorderEnd, int* preorde
 
   // If root is at left edge of inorder traversal, then no left subtree
   if (r == inorderStart)
-  {
     root->left = NULL;
-  }
   else
-  {
     root->left = Reconstruct(inorder, inorderStart, r - 1, preorder);
-  }
 
   // If root is at right edge of inorder traversal, then no right subtree
   if (r == inorderEnd)
-  {
     root->right = NULL;
-  }
   else
-  {
     root->right = Reconstruct(inorder, r + 1, inorderEnd, preorder);
-  }
 
   return root;
 }
