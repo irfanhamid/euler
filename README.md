@@ -11,5 +11,7 @@ euler
   |---> strings: problems based on strings
           |---> reverse: reverse a string in-place, i.e., without using auxiliary storage space
           |---> reversewords: reverse the words in a string in-place
+          |---> longestunique: find the longest unique substring of a string, assuming ASCII characters
+          |---> longestpalindrome: find the longest palindrome in a string
   |---> graphs: graph search algorithms
   |---> esoteric: just what the name says
