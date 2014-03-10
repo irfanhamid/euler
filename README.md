@@ -13,5 +13,7 @@ euler
           |---> reversewords: reverse the words in a string in-place
           |---> longestunique: find the longest unique substring of a string, assuming ASCII characters
           |---> longestpalindrome: find the longest palindrome in a string
+  |---> linklist: problems based on link lists
+          |---> arblink: reconstruct a link list which has one next and one arbitrary pointer pointing to any node in the link list
   |---> graphs: graph search algorithms
   |---> esoteric: just what the name says
