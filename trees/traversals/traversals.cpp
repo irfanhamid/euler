@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+#include <deque>
 #include "tree.hpp"
 
 using namespace std;
@@ -119,6 +120,26 @@ void Preorder(const Tree_T* tree)
   }
 }
 
+// We'll print out one line per level
+void BreadthFirst(const Tree_T* tree)
+{
+  deque<const Tree_T*> store;
+  store.push_back(tree);
+
+  while (!store.empty())
+  {
+    const Tree_T* curr = store.front();
+    store.pop_front();
+    cout << curr->data << "\t";
+    if (curr->left)
+      store.push_back(curr->left);
+    if (curr->right)
+      store.push_back(curr->right);
+  }
+
+  cout << endl;
+}
+
 int main()
 {
   Tree_T root(8);
@@ -138,5 +159,6 @@ int main()
   cout << endl;
   Postorder(&root);
   cout << endl;
+  BreadthFirst(&root);
   return 0;
 }

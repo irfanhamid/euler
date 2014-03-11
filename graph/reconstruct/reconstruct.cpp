@@ -14,6 +14,8 @@ typedef GraphNode_T<int, double> GraphNode;
 typedef map<const GraphNode*, GraphNode*> Mapping;
 typedef set<const GraphNode*> Visited;
 
+// Slightly inelegant implementation, in that it requires a map and a set
+// Optimized impl would use only the map and hold a visited flag within its value type
 void DoReconstructionFromNode(const GraphNode* self, Mapping& mapping, Visited& visited)
 {
   if (visited.find(self) != visited.end())

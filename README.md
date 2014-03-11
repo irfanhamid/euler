@@ -16,4 +16,5 @@ euler
   |---> linklist: problems based on link lists
           |---> arblink: reconstruct a link list which has one next and one arbitrary pointer pointing to any node in the link list
   |---> graphs: graph search algorithms
+          |---> reconstruct: given an adjacency list, reconstruct a graph, even if it has cycles
   |---> esoteric: just what the name says
