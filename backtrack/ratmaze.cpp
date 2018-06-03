@@ -1,7 +1,8 @@
 /**
  * Problem taken from https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
- * m represents a maze of n x n dimension. A rat has to go (0,0) -> (n-1,n-1). Write an
- * algorithm to print all possible paths in lexicographic order for the rat to reach dest.
+ * m represents a maze of n x n dimension where a 0 represents a wall, 1 represents a path.
+ * A rat has to go (0,0) -> (n-1,n-1). Write an algorithm to print all possible  paths in
+ * lexicographic order for the rat to reach destination.
  */
 
 #include <iostream>

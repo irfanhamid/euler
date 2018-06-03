@@ -31,5 +31,9 @@ This is a problem solving repository. Mostly to prepare for interviews. Each dir
    |---> graphs: graph search algorithms
 
           |---> reconstruct: given an adjacency list, reconstruct a graph, even if it has cycles
+   
+   |---> backtrack: problems involving search w/ backtracking
+          
+          |---> ratmaze: rat finds all possible paths from (0,0) to (n-1,n-1) in a maze
 
    |---> esoteric: just what the name says
