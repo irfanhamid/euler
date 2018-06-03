@@ -36,4 +36,6 @@ This is a problem solving repository. Mostly to prepare for interviews. Each dir
           
           |---> ratmaze: rat finds all possible paths from (0,0) to (n-1,n-1) in a maze
 
+          |---> nqueens: the classical 8 queens problem generalized to an nxn chess square
+
    |---> esoteric: just what the name says
