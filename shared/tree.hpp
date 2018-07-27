@@ -14,12 +14,21 @@ namespace euler
     Self_T* parent;
 
     TreeNode_T(const Payload_T& d) : data(d),
-                                     left(NULL),
-                                     right(NULL),
-                                     parent(NULL)
+                                     left(nullptr),
+                                     right(nullptr),
+                                     parent(nullptr)
     {
     }
 
+    TreeNode_T(const Payload_T& d,
+               TreeNode_T* l,
+               TreeNode_T* r) : data(d),
+                                left(l),
+                                right(r),
+                                parent(nullptr)
+    {
+    } 
+    
     void SetLeftChild(Self_T* l)
     {
       left = l;
@@ -37,7 +46,7 @@ namespace euler
   TreeNode_T<Payload_T>* TreeMin(TreeNode_T<Payload_T>* tree)
   {
     if (!tree)
-      return NULL;
+      return nullptr;
 
     TreeNode_T<Payload_T>* current = tree;
     while (current->left)
@@ -50,7 +59,7 @@ namespace euler
   TreeNode_T<Payload_T>* TreeMax(TreeNode_T<Payload_T>* tree)
   {
     if (!tree)
-      return NULL;
+      return nullptr;
 
     TreeNode_T<Payload_T>* current = tree;
     while (current->right)
