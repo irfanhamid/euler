@@ -22,12 +22,6 @@ namespace euler
                               prev(nullptr)
     {
     }
-
-    LinkNode_T(Payload_T& d) : data(d),
-                               next(nullptr),
-                               prev(nullptr)
-    {
-    }
   };
 
   template<class Payload_T>
