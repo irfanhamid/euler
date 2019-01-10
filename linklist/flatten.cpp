@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
@@ -16,6 +17,43 @@ struct Node_T {
 };
 
 template<typename U>
+class Iterator_T {
+public:
+  Iterator_T(Node_T<U>* head)
+  {
+    curr = head;
+  }
+
+  Node_T<U>* operator++()
+  {
+    if (!curr)
+      return nullptr;
+
+    if (curr->next)
+      st.push(curr->next);
+
+    if (curr->child)
+      curr = curr->child;
+    else if (!st.empty()) {
+      curr = st.top();
+      st.pop();
+    } else {
+      curr = nullptr;
+    }
+
+    return curr;
+  }
+
+  Node_T<U>* operator* () const
+  {
+    return curr;
+  }
+private:
+  stack<Node_T<U>*> st;
+  Node_T<U>* curr;
+};
+
+template<typename U>
 void Flatten(Node_T<U>* head, Node_T<U>** tail)
 {
   if (!head)
@@ -29,8 +67,6 @@ void Flatten(Node_T<U>* head, Node_T<U>** tail)
       Flatten(curr->child, &tail2);
       curr->next = curr->child;
       curr->child = nullptr;
-      //while (curr->next)
-      //  curr = curr->next;
       curr = tail2;
       curr->next = next;
     }
@@ -63,6 +99,11 @@ int main()
   B.next = &C, C.next = &D;
   G.child = &H, H.next = &I;
   I.next = &J;
+
+  for (Iterator_T<char> it(&A); *it; ++it) {
+    cout << (*it)->data << "\t";
+  }
+  cout << endl;
   
   Flatten(&A, &T);
 
